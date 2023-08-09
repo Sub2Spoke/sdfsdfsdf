@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "donutbypass2",
+  "version": "${version}",
+  "name": "donutbypass2",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/itsja/donutbypass2"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/donutbypass2/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "tk.jandev.donutbypass2.client.Donutbypass2Client"
+    ],
+    "main": [
+      "tk.jandev.donutbypass2.Donutbypass2"
+    ]
+  },
+  "mixins": [
+    "donutbypass2.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
