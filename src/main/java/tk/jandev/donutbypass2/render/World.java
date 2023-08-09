@@ -16,13 +16,13 @@ public class World {
     public static MinecraftClient mc = MinecraftClient.getInstance();
     public static void world(MatrixStack stack) {
         ArrayList<BlockPos> shit = (ArrayList<BlockPos>) toRender.clone();
-        for (BlockPos pos : shit) {
-            if (mc.player.squaredDistanceTo(mc.player.getX(), mc.player.getY(), mc.player.getZ()) > 40000) continue;
             OutlineFramebuffer.useAndDraw(() -> {
-                Renderer3d.renderThroughWalls();
-                Renderer3d.renderOutline(stack, Color.CYAN, new Vec3d(pos.getX(), pos.getY(), pos.getZ()), new Vec3d(1, 1, 1));
+                for (BlockPos pos : shit) {
+                    if (mc.player.squaredDistanceTo(pos.getX(), pos.getY(), pos.getZ()) > 40000) continue;
+                    Renderer3d.renderThroughWalls();
+                    Renderer3d.renderOutline(stack, Color.CYAN, new Vec3d(pos.getX(), pos.getY(), pos.getZ()), new Vec3d(1, 1, 1));
+                }
             }, 1, Color.CYAN, Color.CYAN);
-        }
     }
 
 }
